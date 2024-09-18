@@ -17,6 +17,6 @@ class Transactions(models.Model):
     
     
     def __str__(self):
-        return f'{self.owner[:6] - self.to[:6] : self.amount}'
+        return f'{self.owner_address[:8] - self.to_address[:8] : self.amount}'
     
     
