@@ -3,8 +3,8 @@ from django.db import models
 
 
 class Block(models.Model):
-    block_id = models.PositiveIntegerField()
-    timestamp = models.PositiveIntegerField()
+    block_id = models.CharField(max_length=128)
+    timestamp = models.CharField(max_length=128)
 
     def __str__(self):
         return str(self.block_id)
