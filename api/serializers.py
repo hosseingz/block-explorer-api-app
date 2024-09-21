@@ -13,3 +13,10 @@ class BlocksDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model= Block
         fields = ('block_id', 'timestamp', 'transactions')
+        
+        
+class TransactionsDetailSerializer(serializers.ModelSerializer):
+    block = serializers.CharField(source='block.block_id', read_only=True)
+    class Meta:
+        model = Transactions
+        fields = ['block', 'owner_address', 'to_address', 'amount', 'txID']
