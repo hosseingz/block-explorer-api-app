@@ -1,12 +1,11 @@
-from rest_framework.authentication import BasicAuthentication
+from rest_framework.authentication import BasicAuthentication, TokenAuthentication
+from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 from rest_framework import generics, views, status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django.shortcuts import get_list_or_404
 from django.db.models import Q
 from .serializers import *
-
-
 
 class SignupAPIView(generics.CreateAPIView):
     authentication_classes = [BasicAuthentication]
@@ -17,7 +16,8 @@ class SignupAPIView(generics.CreateAPIView):
 
 
 class BlockDetailAPIView(generics.RetrieveAPIView):
-    authentication_classes = [BasicAuthentication]
+    throttle_classes = [AnonRateThrottle, UserRateThrottle]
+    authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [AllowAny]
     
     queryset = Block.objects.all()
@@ -27,7 +27,8 @@ class BlockDetailAPIView(generics.RetrieveAPIView):
 
 
 class TransactionDetailAPIView(generics.RetrieveAPIView):
-    authentication_classes = [BasicAuthentication]
+    throttle_classes = [AnonRateThrottle, UserRateThrottle]
+    authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [AllowAny]
     
     queryset = Transactions.objects.all()
@@ -36,7 +37,8 @@ class TransactionDetailAPIView(generics.RetrieveAPIView):
 
 
 class AddressAPIView(views.APIView):
-    authentication_classes = [BasicAuthentication]
+    throttle_classes = [AnonRateThrottle, UserRateThrottle]
+    authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [AllowAny]
     
     
