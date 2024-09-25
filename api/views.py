@@ -7,6 +7,15 @@ from django.db.models import Q
 from .serializers import *
 
 
+
+class SignupAPIView(generics.CreateAPIView):
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [AllowAny]
+    queryset = User.objects.all()
+    
+    serializer_class = UserRegistrationSerializer
+
+
 class BlockDetailAPIView(generics.RetrieveAPIView):
     authentication_classes = [BasicAuthentication]
     permission_classes = [AllowAny]
