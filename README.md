@@ -12,12 +12,13 @@ Welcome to the **Block Explorer API**! This is a Django-based RESTful API that a
 
 ## Table of Contents 📚
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Installation](#installation-%EF%B8%8F)
+- [sample data](#sample-data-)
+- [Usage](#usage-)
 - [API Endpoints](#api-endpoints)
-- [Admin Integration](#admin-integration)
-- [Data Model](#data-model)
-- [License](#license)
+- [Admin Integration](#admin-integration-%EF%B8%8F)
+- [Data Model](#data-model-%EF%B8%8F)
+- [License](#license-)
 ## Installation 🛠️
 
 1. **Clone the repository**:
