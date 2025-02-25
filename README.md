@@ -23,7 +23,7 @@ Welcome to the **Block Explorer API**! This is a Django-based RESTful API that a
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/hosseingz/block-explorer-api.git
+   git clone https://github.com/hosseingz/block-explorer-api-app.git
    cd block-explorer-api
    ```
 
